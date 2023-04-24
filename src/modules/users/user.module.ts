@@ -3,10 +3,9 @@ import { UserService } from './services/user.service';
 import { UserController } from './controllers/user.controller';
 import  UserRepository  from './repository/user.repository';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserSchema } from './Schemas/user.shema';
+import { UserSchema } from './schemas/user.shema';
 
-import { PassportModule } from '@nestjs/passport';
-
+//import { PassportModule } from '@nestjs/passport';
 
 @Module({
   imports: [TypeOrmModule.forFeature([UserSchema])],

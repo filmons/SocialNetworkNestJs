@@ -1,43 +1,44 @@
 import {
-    Entity,
-    Column,
-    PrimaryGeneratedColumn,
-    BaseEntity,
-    OneToMany,
-    ManyToOne,
-  } from 'typeorm';
-//   import { Practitioner } from '../practitioner/practitioner.entity';
-import { User } from 'src/modules/users/Entity/user.entity';
-import { Like } from 'src/modules/likes/Entity/like.entity'; 
-import { Comment } from 'src/modules/comments/Entity/comment.entity';
-  @Entity()
-  export class Post  extends BaseEntity {
-    @PrimaryGeneratedColumn()
-    id: number;
-  
-    @Column()
-    title: string;
+  Entity,
+  Column,
+  PrimaryGeneratedColumn,
+  BaseEntity,
+  OneToMany,
+  ManyToOne,
+} from "typeorm";
 
-    @Column()
-    content: string;
+@Entity({ name: 'posts' })
+export class Post extends BaseEntity {
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    img: string;
-  
-    @Column()
-    vido: string;
+  @Column()
+  post_date: Date;
 
-    @Column({ default: 0 })
-    number_likes: number;
-  
-    @Column({ default: 0 })
-    number_dislikes: number;
-    
-    @ManyToOne(() => User, user => user.posts)
-    user: User;
-    @OneToMany(() => Like, like => like.post)
-    likes: Like[];
-    @OneToMany(() => Comment, comment => comment.post)
-    comments: Comment[];
-  }
-  
+  @Column()
+  post_author: number;
+
+  @Column()
+  post_title: string;
+
+  @Column()
+  post_content: string;
+
+  @Column()
+  post_status: string;
+
+  @Column({ nullable: true })
+  comments: string;
+
+  @Column({ nullable: true })
+  likedBy: string;
+
+  @Column({ nullable: true })
+  mediaSrc: string;
+
+  @Column({ nullable: true })
+  post_modified: Date;
+
+  @Column()
+  post_type: string;
+}
