@@ -9,20 +9,19 @@ import {DataSource} from "typeorm";
 import {User} from "./Entity/user.entity";
 import { PostsModule } from './posts/posts.module';
 import { CommentsModule } from './comments/comments.module';
-
+import DbConfig from './config/db.config';
+import { ConfigModule, ConfigService } from '@nestjs/config';
 
 @Module({
   imports: [UserModule,
-    TypeOrmModule.forRoot({
-      type: 'mysql',
-      host: 'localhost',
-      port: 3306,
-      username: 'root',
-      password: '',
-      database: 'social_net',
-      entities: [User],
-      autoLoadEntities: true,
-      synchronize: true,
+    ConfigModule.forRoot({
+      isGlobal: true,
+      load: [DbConfig],
+    }),
+    TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
+      inject: [ConfigService],
+      useFactory: DbConfig,
     }),
     PostsModule,
     CommentsModule],
