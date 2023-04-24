@@ -24,7 +24,7 @@ import DbConfig from "./config/db.config";
       inject: [ConfigService],
       useFactory: DbConfig,
     }),
-    PostsModule,
+      PostsModule,
     CommentsModule,
     FollowersModule,
     LikesModule],

@@ -1,1 +1,7 @@
-export class CreateLikeDto {}
+import {Column} from "typeorm";
+
+export class CreateLikeDto {
+    id: number;
+    userId: number;
+    postId: number;
+}

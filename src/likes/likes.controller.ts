@@ -7,7 +7,7 @@ import { UpdateLikeDto } from './dto/update-like.dto';
 export class LikesController {
   constructor(private readonly likesService: LikesService) {}
 
-  @Post()
+  @Post('/createLike')
   create(@Body() createLikeDto: CreateLikeDto) {
     return this.likesService.create(createLikeDto);
   }
@@ -17,17 +17,17 @@ export class LikesController {
     return this.likesService.findAll();
   }
 
-  @Get(':id')
+  @Get('/:id')
   findOne(@Param('id') id: string) {
     return this.likesService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('/update/:id')
   update(@Param('id') id: string, @Body() updateLikeDto: UpdateLikeDto) {
     return this.likesService.update(+id, updateLikeDto);
   }
 
-  @Delete(':id')
+  @Delete('/delete/:id')
   remove(@Param('id') id: string) {
     return this.likesService.remove(+id);
   }

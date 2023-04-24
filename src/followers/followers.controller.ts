@@ -7,7 +7,7 @@ import { UpdateFollowerDto } from './dto/update-follower.dto';
 export class FollowersController {
   constructor(private readonly followersService: FollowersService) {}
 
-  @Post()
+  @Post('/createFollower')
   create(@Body() createFollowerDto: CreateFollowerDto) {
     return this.followersService.create(createFollowerDto);
   }
@@ -17,17 +17,17 @@ export class FollowersController {
     return this.followersService.findAll();
   }
 
-  @Get(':id')
+  @Get('/:id')
   findOne(@Param('id') id: string) {
     return this.followersService.findOne(+id);
   }
 
-  @Patch(':id')
+  @Patch('/update/:id')
   update(@Param('id') id: string, @Body() updateFollowerDto: UpdateFollowerDto) {
     return this.followersService.update(+id, updateFollowerDto);
   }
 
-  @Delete(':id')
+  @Delete('/delete/:id')
   remove(@Param('id') id: string) {
     return this.followersService.remove(+id);
   }
