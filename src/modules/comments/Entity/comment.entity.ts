@@ -1,6 +1,6 @@
 import { Entity, Column, PrimaryGeneratedColumn, ManyToOne } from 'typeorm';
-import { User } from '../../users/Entity/user.entity'; 
-import { Post } from '../../posts/Entity/post.entity'; 
+import { User } from '../../users/Entity/user.entity';
+import { Posts } from '../../posts/Entity/post.entity';
 
 @Entity()
 export class Comment {
@@ -19,6 +19,6 @@ export class Comment {
   @ManyToOne(() => User, user => user.comments)
   user: User;
 
-  @ManyToOne(() => Post, post => post.comments)
-  post: Post;
+  @ManyToOne(() => Posts, post => post.comments, { onDelete: "CASCADE" })
+  post: Posts;
 }

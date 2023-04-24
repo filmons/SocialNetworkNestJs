@@ -1,6 +1,10 @@
-export type user = {
-  txt:string;
-  img:string;
+export type post = {
+  title:string;
+  content:string;
+  image:string;
   vido:string;
-  like:boolean;
-};
+  number_likes: number;
+  number_dislikes: number;
+ 
+}; // userId:Number;
+  // postId:Number;

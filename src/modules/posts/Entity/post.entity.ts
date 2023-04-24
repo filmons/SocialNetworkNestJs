@@ -11,7 +11,7 @@ import { User } from 'src/modules/users/Entity/user.entity';
 import { Like } from 'src/modules/likes/Entity/like.entity'; 
 import { Comment } from 'src/modules/comments/Entity/comment.entity';
   @Entity()
-  export class Post  extends BaseEntity {
+  export class Posts  extends BaseEntity {
     @PrimaryGeneratedColumn()
     id: number;
   
@@ -22,7 +22,7 @@ import { Comment } from 'src/modules/comments/Entity/comment.entity';
     content: string;
 
     @Column()
-    img: string;
+    image: string;
   
     @Column()
     vido: string;
@@ -37,7 +37,7 @@ import { Comment } from 'src/modules/comments/Entity/comment.entity';
     user: User;
     @OneToMany(() => Like, like => like.post)
     likes: Like[];
-    @OneToMany(() => Comment, comment => comment.post)
+    @OneToMany(() => Comment, comment => comment.post, { cascade: true } )
     comments: Comment[];
   }
   

@@ -13,7 +13,7 @@ import {
   } from 'typeorm';
 //   import { Practitioner } from '../practitioner/practitioner.entity';
 // ipmort {Post} from '..'
-import { Post } from 'src/modules/posts/Entity/post.entity';
+import { Posts } from 'src/modules/posts/Entity/post.entity';
 
 import { Comment } from 'src/modules/comments/Entity/comment.entity'; 
 import { Like } from 'src/modules/likes/Entity/like.entity'; 
@@ -33,8 +33,8 @@ import { Follower } from 'src/modules/follower/Entity/follower.entity';
     passsword: string;
   
    
-    @OneToMany(() => Post, post => post.user)
-    posts: Post[];
+    @OneToMany(() => Posts, post => post.user)
+    posts: Posts[];
   
     @OneToMany(() => Comment, comment => comment.user)
     comments: Comment[];

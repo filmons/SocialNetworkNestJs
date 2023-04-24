@@ -2,12 +2,10 @@ import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import ormConfig from './config/ormConfig';
-import { UserModule } from './modules';
-import { CommentModule } from './modules/comments/comment.module';
+import { UserModule, PostModule, CommentModule } from './modules';
 import { LikeModule } from './modules/likes/like.module';
 import { FollowerModule } from './modules/follower/follower.module';
 import { PassportModule } from '@nestjs/passport';
-// import { UserFollowersUserModule } from './modules/user_followers_users/user_followers_user.module';
 
 @Module({
   imports: [
@@ -25,6 +23,7 @@ import { PassportModule } from '@nestjs/passport';
     CommentModule,
     LikeModule,
     FollowerModule,
+    PostModule
     // UserFollowersUserModule
   ],
   controllers: [],
