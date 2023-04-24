@@ -25,7 +25,7 @@ export class UserRepository {
           ],
         });
         console.log(query, 'this sis the query')
-        console.log(users, 'fuck')
+        console.log(users, 'users')
         return users;
       }
 

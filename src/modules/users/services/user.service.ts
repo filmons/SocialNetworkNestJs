@@ -39,7 +39,7 @@ export class UserService implements IUserService {
         return oneuser
       }
 
-      async searchUsers(query: string): Promise<User> {
+      async searchUsers(query: string): Promise<void> {
         console.log(query, "oneuser")
         return await this.userRepository.searchUsers(query);
       }
