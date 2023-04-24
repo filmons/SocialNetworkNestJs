@@ -6,10 +6,36 @@ export class User {
     id: number;
 
     @Column()
-    nom: string;
+    first_name: string;
 
     @Column()
-    prenom: string;
+    last_name: string;
 
+    @Column()
+    description: string;
+
+    @Column()
+    followers: string;
+
+    @Column()
+    following: string;
+
+    @Column()
+    certified: string;
+
+    @Column()
+    user_avatar: string;
+
+    @Column()
+    user_email: string;
+
+    @Column()
+    user_login: string;
+
+    @Column()
+    user_pseudo: string;
+
+    @Column()
+    user_pwd: string;
 
 }
