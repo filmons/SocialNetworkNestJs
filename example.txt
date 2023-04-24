@@ -1,0 +1,36 @@
+nest g mo modules/users/user --flat
+nest g class modules/users/models/user --flat
+nest g itf  modules/users/interfaces/user --flat
+nest g s  modules/users/services/user --flat
+nest g co  modules/users/controllers/user --flat
+
+nest g mo modules/posts/post --flat
+nest g class modules/posts/models/post --flat
+nest g itf  modules/posts/interfaces/post --flat
+nest g s  modules/posts/services/post --flat
+nest g co  modules/posts/controllers/post --flat
+
+nest g mo modules/Comments/Comment --flat
+nest g class modules/Comments/models/Comment --flat
+nest g itf  modules/Comments/interfaces/Comment --flat
+nest g s  modules/Comments/services/Comment --flat
+nest g co  modules/Comments/controllers/Comment --flat
+
+nest g mo modules/Likes/Like --flat
+nest g class modules/Likes/models/Like --flat
+nest g itf  modules/Likes/interfaces/Like --flat
+nest g s  modules/Likes/services/Like --flat
+nest g co  modules/Likes/controllers/Like --flat
+
+nest g mo modules/Follower/Follower --flat
+nest g class modules/Follower/models/Follower --flat
+nest g itf  modules/Follower/interfaces/Follower --flat
+nest g s  modules/Follower/services/Follower --flat
+nest g co  modules/Follower/controllers/Follower --flat
+
+
+nest g mo modules/user_followers_users/user_followers_user --flat
+nest g class modules/user_followers_users/models/user_followers_user --flat
+nest g itf  modules/user_followers_users/interfaces/user_followers_user --flat
+nest g s  modules/user_followers_users/services/user_followers_user --flat
+nest g co  modules/user_followers_users/controllers/user_followers_user --flat
