@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>Nestagram</title>
+        <link rel="icon" type="image/png" href="https://static.javatpoint.com/js/nodejs/images/nestjs.png" />
+    </head>
+    <body>
+        <style>
+           @import url("https://fonts.googleapis.com/css2?family=Satisfy&display=swap");
+            *,* :after,* :before{padding:0;margin:0;box-sizing:border-box}html{font-size:10px;font-family:Poppins,sans-serif}ul{list-style:none}.grid{display:grid}.main-header{grid-template-columns:.6fr minmax(650px,1.4fr) .6fr;position:sticky;top:0;left:0;z-index:999}.flex-container{display:flex;align-items:center}header{padding:1rem 0;border-bottom:1px solid #ddd;background-color:#fff}.header-container{justify-content:space-between;grid-column:2/3;gap:4%}.logo{font-family:Satisfy,cursive}.logo-nav{font-size:3rem;font-weight:700;padding:0 1rem}.navbar{justify-content:flex-end}.navbar-item{padding:.5rem 1rem;font-size:2.2rem;border-radius:10px;margin:0 .1rem;cursor:pointer}.navbar-item img{display:inline-block;width:3.5rem;vertical-align:top;border-radius:50%}.navbar-item:hover{background-color:#eee}.no-hover:hover{background-color:#fff}.main-content{grid-template-columns:1fr 470px 320px 1fr;padding:3rem 0;gap:3rem;font-size:1.1rem;color:#555}.main-gallery-wrapper{grid-column:2/3;width:100%;gap:1rem;flex-flow:column;margin-bottom:50px}.sidebar{grid-column:3/4;width:100%;height:100%;position:relative}.card-wrapper{width:100%;border:1px solid #ccc;background-color:#fff;border-radius:10px;flex-flow:column}.card-header{width:100%;padding:.8rem;align-items:center;grid-template-columns:10% 1fr 10%;grid-template-rows:minmax(0,1fr);height:56.5px}.header-img-container{width:100%;height:100%;grid-column:1/2;grid-row:1/3;justify-content:center;align-items:center;position:relative}.card-header-img{position:relative;width:90%;height:100%;border-radius:50%;display:inline-block}.card-title{font-size:1.3rem;font-weight:700;padding-left:1rem;grid-column:2/3;grid-row:1/2}.card-subtitle{grid-column:2/3;grid-row:2/3;padding-left:1rem}.card-img-container{width:100%;height:465px}.card-img{width:100%;height:100%}.card-data{flex-flow:column;padding:.8rem;width:100%}.card-text{width:100%;text-align:left;margin:.5rem 0;font-size:1.4rem}.comments-btn{color:#999;cursor:pointer}.comment-container{flex-grow:1;height:100%}.publish{font-size:1.3rem;color:#4af}.sidebar-menu-container{position:sticky;width:100%;top:8.6rem;left:0}.sidebar-card{align-items:center;grid-template-columns:minmax(0,auto) 1fr minmax(0,auto)}.sidebar-header{padding:1rem 0}.sidebar-img{grid-column:1/2;grid-row:1/3;border-radius:50%}.sidebar-hd-img{width:5.8rem;height:5.8rem}.side-bar-img-alt{width:3.2rem;height:3.2rem}.sidebar-title{align-self:end;display:flex}.sidebar-subtitle{align-self:flex-start;font-size:1.2rem;color:#888}.sidebar-btn{grid-column:3/4;grid-row:1/3;justify-self:end;background:#000;padding:5px;border-radius:5px;color:#fff;cursor:pointer;font-size:1.2rem;font-weight:500}.sidebar-btn:hover{transition:all .3s;background:#fff;color:#000}.suggestions-header{grid-template-columns:1fr minmax(0,auto);padding:.5rem 0;margin-bottom:1rem}.suggestions-text{font-size:1.3rem;color:#000;font-weight:500}.sidebar-subtitle-alt{font-size:1.15rem}.sidebar-card-alt{margin-bottom:25px}@media all and (max-width:1000px){.sidebar{display:none}.main-content{grid-template-columns:1fr 470px 1fr;gap:0}}@media all and (max-width:650px){.main-header{grid-template-columns:1fr}.header-container{grid-column:1/1}}@media all and (max-width:480px){.main-content{grid-template-columns:minmax(0,1fr)}.main-gallery-wrapper{grid-column:1/2;width:100%;height:100%;flex-flow:column}.header-container{gap:0}.navbar-item{font-size:1.8rem;padding:.4rem .8rem}.card-wrapper{border:none;border-radius:none}}.post-content{margin:10px}*{box-sizing:border-box;margin:0;padding:0;font-family:"Open Sans"}body,html{width:100%;background-color:#f5f5f5}body{overflow-x:hidden;overflow-y:scroll}svg{cursor:pointer}.container{width:100%;background-color:#fff;border:.5px solid #80808055;display:grid;flex-direction:column;align-items:center;overflow-x:none}.container>.top{border-bottom:.5px solid #5a5a5a51;display:flex;align-items:center;justify-content:flex-start;min-height:60px;width:100%;background-color:#fff;padding:0 10px;gap:10px}.container>.top>.image{min-width:40px;min-height:40px;display:flex;flex-direction:column;align-items:center;justify-content:center;overflow:hidden;border:none;border-radius:100%}.container>.top>.information{width:100%;overflow:hidden;display:flex;flex-direction:column;align-items:flex-start}.container>.top>.information>.username,.name{font-size:1rem;max-width:100%;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.container>.top>.information .username{display:flex;align-items:center}.container>.top>.information>.username>.designation{overflow:hidden;text-overflow:ellipsis}.container>.top>.information>.username>.blue-tick{display:flex;align-items:center}.container>.top>.information>.username:hover{text-decoration:underline;cursor:pointer}.container>.top>.information>.name{font-size:12px}.container>.middle{height:inherit;width:100%;min-height:100%;display:flex}.container>.middle>.post{width:100%;height:100%;user-select:none;-webkit-user-select:none;-moz-user-select:none;-webkit-user-drag:none}.container>.topComments{width:100%;padding:10px 1rem;gap:3.5px;display:flex;align-items:flex-start;justify-content:flex-start;flex-direction:column}.container>.topComments>.comment{display:flex;align-items:center;gap:5px}.container>.topComments .comment>.username{font-size:14px;font-weight:600}.container>.topComments>.comment>.text{font-size:13px}.container>.likes{color:#000;width:100%;padding:5px 1rem;font-size:14px;font-weight:700;cursor:pointer}.container>.direction{font-size:13px;padding:5px 1rem;font-weight:400;color:gray;width:100%}.suggestions{display:none;width:540px;height:540px;background-color:red;top:60px;position:sticky;float:right;right:0}@media only screen and (max-width:1000px){.suggestions{display:none}}.logo{width:100%}.currentUserStats{color:#000;margin-bottom:25px}.nestaPosts{width:100%}
+        </style>
+
+        <header class="grid main-header">
+            <div class="flex-container header-container">
+                <span class="logo logo-nav header-item">Nestagram</span>
+
+                <nav class="header-item main-nav">
+                    <ul class="navbar flex-container">
+                        <li class="navbar-item">
+                            <i class="bi bi-house-door-fill"></i>
+                        </li>
+                        <li class="navbar-item">
+                            <i class="bi bi-send"></i>
+                        </li>
+                        <li class="navbar-item">
+                            <i class="bi bi-plus-square"></i>
+                        </li>
+                        <li class="navbar-item">
+                            <i class="bi bi-compass"></i>
+                        </li>
+                        <li class="navbar-item">
+                            <i class="bi bi-heart"></i>
+                        </li>
+                        <li class="navbar-item no-hover">
+                            <img class="currentUserAvatar" src="https://www.jbei.org/wp-content/uploads/2019/10/default_user_avatar.png" />
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <section class="main-content grid">
+            <div class="main-gallery-wrapper flex-container">
+                <div class="nestaPosts"></div>
+            </div>
+
+            <div class="sidebar">
+                <div class="sidebar-menu-container">
+                    <div class="sidebar-card sidebar-header grid">
+                        <img class="sidebar-img sidebar-hd-img currentUserAvatar" src="https://www.jbei.org/wp-content/uploads/2019/10/default_user_avatar.png" />
+                        <span class="sidebar-title card-title currentUserName">Créez un nouvel utilisateur pour commencer</span>
+                        <span class="card-subtitle sidebar-subtitle currentUserBio">Créez des posts pour commencer</span>
+                    </div>
+                    <div class="currentUserStats"></div>
+                    <div class="suggestions-header grid">
+                        <span class="suggestions-text">Tous les utilisateur</span>
+                    </div>
+
+                    <div id="users-list"></div>
+
+                    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+                    <script>
+                        const port = 3000;
+
+                        const certif_logo = '<div class="blue-tick"><svg width="20px" height="20px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 100 100" style="enable-background:new 0 0 100 100;" xml:space="preserve"><style type="text/css">.bt0 { fill: #0084FF; }.bt1 { fill: none; stroke: #0084FF; stroke-miterlimit: 10; }.bt2 { fill: #FFFFFF; stroke: #FFFFFF; stroke-width: 0.25; stroke-miterlimit: 10; }</style><g><path class="bt0" d="M81.2,50c0,1.8-2.5,3.3-2.8,5c-0.3,1.7,1.5,4,1,5.7c-0.6,1.7-3.5,2.2-4.4,3.7c-0.9,1.5,0.1,4.3-1,5.7c-1.1,1.3-4.1,0.9-5.4,2c-1.3,1.1-1.4,4.1-2.9,5c-1.5,0.9-4.1-0.6-5.7,0c-1.6,0.6-2.7,3.4-4.4,3.7c-1.7,0.3-3.6-1.9-5.4-1.9c-1.8,0-3.7,2.2-5.4,1.9c-1.7-0.3-2.8-3.1-4.4-3.7c-1.7-0.6-4.2,0.8-5.8,0c-1.5-0.9-1.6-3.8-2.9-5c-1.3-1.1-4.3-0.7-5.4-2c-1.1-1.3-0.2-4.1-1-5.7c-0.9-1.5-3.8-2.1-4.4-3.7c-0.6-1.6,1.3-3.9,1-5.7c-0.3-1.7-2.8-3.2-2.8-5c0-1.8,2.5-3.3,2.8-5c0.3-1.7-1.5-4-1-5.7c0.6-1.7,3.5-2.2,4.4-3.7c0.9-1.5-0.1-4.3,1-5.7c1.1-1.3,4.1-0.9,5.4-2c1.3-1.1,1.4-4.1,2.9-5c1.5-0.9,4.1,0.6,5.7,0c1.6-0.6,2.7-3.4,4.4-3.7c1.7-0.3,3.6,1.9,5.4,1.9c1.8,0,3.7-2.2,5.4-1.9c1.7,0.3,2.8,3.1,4.4,3.7c1.7,0.6,4.2-0.8,5.8,0c1.5,0.9,1.6,3.8,2.9,5c1.3,1.1,4.3,0.7,5.4,2c1.1,1.3,0.2,4.1,1,5.7c0.9,1.5,3.8,2.1,4.4,3.7c0.6,1.6-1.3,3.9-1,5.7C78.7,46.7,81.2,48.2,81.2,50z"></path><path class="bt1" d="M81.2,50c0,1.8-2.5,3.3-2.8,5c-0.3,1.7,1.5,4,1,5.7c-0.6,1.7-3.5,2.2-4.4,3.7c-0.9,1.5,0.1,4.3-1,5.7c-1.1,1.3-4.1,0.9-5.4,2c-1.3,1.1-1.4,4.1-2.9,5c-1.5,0.9-4.1-0.6-5.7,0c-1.6,0.6-2.7,3.4-4.4,3.7c-1.7,0.3-3.6-1.9-5.4-1.9c-1.8,0-3.7,2.2-5.4,1.9c-1.7-0.3-2.8-3.1-4.4-3.7c-1.7-0.6-4.2,0.8-5.8,0c-1.5-0.9-1.6-3.8-2.9-5c-1.3-1.1-4.3-0.7-5.4-2c-1.1-1.3-0.2-4.1-1-5.7c-0.9-1.5-3.8-2.1-4.4-3.7c-0.6-1.6,1.3-3.9,1-5.7c-0.3-1.7-2.8-3.2-2.8-5c0-1.8,2.5-3.3,2.8-5c0.3-1.7-1.5-4-1-5.7c0.6-1.7,3.5-2.2,4.4-3.7c0.9-1.5-0.1-4.3,1-5.7c1.1-1.3,4.1-0.9,5.4-2c1.3-1.1,1.4-4.1,2.9-5c1.5-0.9,4.1,0.6,5.7,0c1.6-0.6,2.7-3.4,4.4-3.7c1.7-0.3,3.6,1.9,5.4,1.9c1.8,0,3.7-2.2,5.4-1.9c1.7,0.3,2.8,3.1,4.4,3.7c1.7,0.6,4.2-0.8,5.8,0c1.5,0.9,1.6,3.8,2.9,5c1.3,1.1,4.3,0.7,5.4,2c1.1,1.3,0.2,4.1,1,5.7c0.9,1.5,3.8,2.1,4.4,3.7c0.6,1.6-1.3,3.9-1,5.7C78.7,46.7,81.2,48.2,81.2,50z"></path></g><g><rect x="50.7" y="33.5" transform="matrix(0.659 0.7521 -0.7521 0.659 55.6719 -23.4983)" class="bt2" width="6.1" height="32.3"></rect><rect x="36.7" y="47" transform="matrix(0.7521 -0.659 0.659 0.7521 -26.4924 39.8687)" class="bt2" width="6.1" height="16.3"></rect></g></svg></div>';
+
+                        //Afficher le site selon le point de vue d'un utilisateur en particulier
+                        const currentUser = 1;
+
+                        fetch("http://localhost:"+port+"/user/" + currentUser)
+                            .then((response) => response.json())
+                            .then((data) => {
+                                $(".currentUserName").text(data.user_pseudo);
+                                $(".currentUserBio").text(data.description);
+                                $(".currentUserAvatar").attr("src", data.user_avatar);
+                                $(".currentUserAvatar").attr("alt", data.user_pseudo);
+                                $(".currentUserAvatar").attr("title", data.user_pseudo);
+                                $(".currentUserStats").html(
+                                    "📙 " + data.first_name + " " + data.last_name + "<br/>📧 " + data.user_email + "<br/>👤 " + "<span title='Number of followers'>" + data.followers.split(",").length + " followers</span>"
+                                );
+                            })
+                            .catch((error) => console.error(error));
+
+                        $.get("http://localhost:"+port+"/user", function (users) {
+                            // Boucle sur chaque utilisateur
+                            users.forEach(function (user) {
+                                // Création d'un élément HTML pour afficher les informations de l'utilisateur
+                                var cardElement = $('<div class="sidebar-card sidebar-card-alt grid">');
+                                cardElement.append($('<img src="' + user.user_avatar + '" alt="' + user.user_pseudo + ' - Picture" title="' + user.user_pseudo + '" class="sidebar-img side-bar-img-alt">'));
+                                cardElement.append($('<span class="sidebar-title card-title">' + user.user_pseudo + (user.certified ? certif_logo : "") + "</span>"));
+
+                                cardElement.append($('<span class="card-subtitle sidebar-subtitle sidebar-subtitle-alt">' + user.description + "</span>"));
+                                if (user.id != currentUser) {
+                                    if (user.followers.includes(currentUser)) {
+                                        cardElement.append($('<span class="sidebar-btn">Unfollow</span>'));
+                                    } else {
+                                        cardElement.append($('<span class="sidebar-btn">Follow</span>'));
+                                    }
+                                }
+
+                                $("#users-list").append(cardElement);
+                            });
+                        });
+
+                        $.get("http://localhost:"+port+"/post", function (posts) {
+                            const authorPromises = posts.map((post) => {
+                                return fetch("http://localhost:"+port+"/user/" + post.post_author)
+                                    .then((response) => response.json())
+                                    .then((data) => data)
+                                    .catch((error) => console.error(error));
+                            });
+
+                            const post = posts.find((post) => post.id === post.id);
+
+                            Promise.all([Promise.all(authorPromises)]).then((result) => {
+                              const authors = result[0];
+
+                              $(".nestaPosts").empty(); // Supprime le contenu précédent de l'élément
+                              authors.forEach((author, index) => {
+                                const post = posts[index];
+
+                                const postHTML = `
+                                  <div class="main-gallery-wrapper flex-container">
+                                    <div class="container">
+                                      <div class="top">
+                                        <div class="image">
+                                          <img src="${author.user_avatar}" width="40px" height="40px" alt="${author.user_pseudo}" title="${author.user_pseudo}">
+                                        </div>
+
+                                        <div class="information">
+                                          <div class="username">
+                                            <div class="designation">${author.user_pseudo}</div>
+                                              ${author.certified ? `<div class="blue-tick">${certif_logo}</div>` : ""}
+                                            </div>
+                                            <div class="name">@${author.user_login}</div>
+                                          </div>
+                                        </div>
+
+                                        <div class="middle">
+                                          ${post.post_type === "image" ?
+                                            `<img src="${post.mediaSrc}" class="post" alt="${post.post_title} par ${author.user_pseudo}" title="${post.post_title} par ${author.user_pseudo}">` 
+                                            : 
+                                            `<video src="${post.mediaSrc}" class="post" alt="${post.post_title} par ${author.user_pseudo}" title="${post.post_title} par ${author.user_pseudo}" autoplay controls loop muted>`
+                                          }
+                                        </div>
+
+                                        <div class="post-content">${post.post_content}</div>
+                                      `;
+
+                                if(post.post_status === "publish") {
+                                  $(".nestaPosts").append(postHTML);
+                                }
+                              });
+                            });
+                        });
+                    </script>
+                </div>
+            </div>
+        </section>
+    </body>
+</html>
