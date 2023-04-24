@@ -1,16 +1,15 @@
 import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { UserController } from './user/controllers/user.controller';
-import { UserModule } from './user/module/user.module';
-import { UserService } from './user/services/user.service';
+
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {DataSource} from "typeorm";
-import {User} from "./Entity/user.entity";
+
 import { PostsModule } from './posts/posts.module';
 import { CommentsModule } from './comments/comments.module';
-import DbConfig from './config/db.config';
-import { ConfigModule, ConfigService } from '@nestjs/config';
+import { UserModule} from "./user/user.module";
+import {ConfigModule,ConfigService} from "@nestjs/config";
+import DbConfig from "./config/db.config";
 
 @Module({
   imports: [UserModule,
