@@ -3,11 +3,8 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import ormConfig from './config/ormConfig';
 import { UserModule } from './modules';
+import { PostModule } from './modules/posts/post.module';
 import { CommentModule } from './modules/comments/comment.module';
-import { LikeModule } from './modules/likes/like.module';
-import { FollowerModule } from './modules/follower/follower.module';
-import { PassportModule } from '@nestjs/passport';
-// import { UserFollowersUserModule } from './modules/user_followers_users/user_followers_user.module';
 
 @Module({
   imports: [
@@ -22,9 +19,8 @@ import { PassportModule } from '@nestjs/passport';
     }),
   
     UserModule,
+    PostModule,
     CommentModule,
-    LikeModule,
-    FollowerModule,
     // UserFollowersUserModule
   ],
   controllers: [],
