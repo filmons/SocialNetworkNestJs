@@ -7,6 +7,8 @@ import { UserService } from './user/services/user.service';
 import {TypeOrmModule} from "@nestjs/typeorm";
 import {DataSource} from "typeorm";
 import {User} from "./Entity/user.entity";
+import { PostsModule } from './posts/posts.module';
+import { CommentsModule } from './comments/comments.module';
 
 
 @Module({
@@ -21,7 +23,9 @@ import {User} from "./Entity/user.entity";
       entities: [User],
       autoLoadEntities: true,
       synchronize: true,
-    })],
+    }),
+    PostsModule,
+    CommentsModule],
   controllers: [AppController],
   providers: [AppService],
 })
