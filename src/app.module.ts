@@ -9,6 +9,8 @@ import { PostsModule } from './posts/posts.module';
 import { CommentsModule } from './comments/comments.module';
 import { UserModule} from "./user/user.module";
 import {ConfigModule,ConfigService} from "@nestjs/config";
+import { FollowersModule } from './followers/followers.module';
+import { LikesModule } from './likes/likes.module';
 import DbConfig from "./config/db.config";
 
 @Module({
@@ -23,7 +25,9 @@ import DbConfig from "./config/db.config";
       useFactory: DbConfig,
     }),
     PostsModule,
-    CommentsModule],
+    CommentsModule,
+    FollowersModule,
+    LikesModule],
   controllers: [AppController],
   providers: [AppService],
 })
